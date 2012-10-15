@@ -143,7 +143,9 @@ var m = Math,
 			onDestroy: null,
 			onZoomStart: null,
 			onZoom: null,
-			onZoomEnd: null
+			onZoomEnd: null,
+			onAnimationEnd: null,
+			onAnimationProgress: null
 		};
 
 		// User defined options
@@ -761,6 +763,10 @@ iScroll.prototype = {
 				if (that.options.onAnimationEnd) that.options.onAnimationEnd.call(that);			// Execute custom code on animation end
 				that._startAni();
 				return;
+			}
+			else
+			{
+				if (that.options.onAnimationProgress) that.options.onAnimationProgress.call(that);	
 			}
 
 			now = (now - startTime) / step.time - 1;

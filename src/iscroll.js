@@ -297,7 +297,6 @@ iScroll.prototype = {
 
 		if (this.options.useTransform) {
 			this.scroller.style[transform] = 'translate(' + x + 'px,' + y + 'px) scale(' + this.scale + ')' + translateZ;
-			console.log('translate(' + x + 'px,' + y + 'px) scale(' + this.scale + ')' + translateZ);
 		} else {
 			x = m.round(x);
 			y = m.round(y);

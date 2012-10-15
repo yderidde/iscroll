@@ -1,7 +1,18 @@
-iScroll v4.2.3 - 2012-10-12
-===========================
+Fork based on iScroll v4.2.3 - 2012-10-12
+===========================================
 
 The overflow:scroll for mobile webkit. Project started because webkit for iPhone does not provide a native way to scroll content inside a fixed size (width/height) div. So basically it was impossible to have a fixed header/footer and a scrolling central area. Until now. Read more at [cubiq.org](http://cubiq.org).
+
+## Bounce when content doesn't overflow
+
+Added support for bouncing / elastic scrolling when content doesn't overflow to mimic iOS UIScrollView. 
+
+``` js
+var myScroll = new iScroll('wrapper', {
+		vBounceNoOverflow: true,
+		hBounceNoOverflow: true
+	 });
+```
 
 ## Ender support
 Using [Ender](http://ender.no.de), add it to your existing build

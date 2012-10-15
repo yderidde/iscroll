@@ -297,6 +297,7 @@ iScroll.prototype = {
 
 		if (this.options.useTransform) {
 			this.scroller.style[transform] = 'translate(' + x + 'px,' + y + 'px) scale(' + this.scale + ')' + translateZ;
+			console.log('translate(' + x + 'px,' + y + 'px) scale(' + this.scale + ')' + translateZ);
 		} else {
 			x = m.round(x);
 			y = m.round(y);
@@ -630,7 +631,7 @@ iScroll.prototype = {
 	
 	_resetPos: function (time) {
 		var that = this,
-			resetX = that.x >= 0 ? 0 : that.x < that.maxScrollX ? that.maxScrollX : that.x,
+			resetX = that.x >= 0 || (this.options.hBounceNoOverflow && that.maxScrollX > 0) ? 0 : that.x < that.maxScrollX ? that.maxScrollX : that.x,
 			resetY = that.y >= that.minScrollY || that.maxScrollY > 0 ? that.minScrollY : that.y < that.maxScrollY ? that.maxScrollY : that.y;
 
 		if (resetX == that.x && resetY == that.y) {

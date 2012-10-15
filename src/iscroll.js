@@ -2,10 +2,10 @@
  * iScroll v4.2.3 ~ Copyright (c) 2012 Matteo Spinelli, http://cubiq.org
  * Released under MIT license, http://cubiq.org/license
  *
- *
- * This is a fork that include bounce when content doesn't overflow to mimic iOS UIScrollView.
+ * Fork by Yaniv De Ridder - https://github.com/yderidde/iscroll.git
+ * This fork include bounce when content doesn't overflow to mimic iOS UIScrollView.
  */
- 
+
 (function(window, doc){
 var m = Math,
 	dummyStyle = doc.createElement('div').style,
@@ -292,8 +292,8 @@ iScroll.prototype = {
 	_pos: function (x, y) {
 		if (this.zoomed) return;
 
-		x = this.hScroll || hBounceNoOverflow ? x : 0;
-		y = this.vScroll || vBounceNoOverflow ? y : 0;
+		x = this.hScroll || this.options.hBounceNoOverflow ? x : 0;
+		y = this.vScroll || this.options.vBounceNoOverflow ? y : 0;
 
 		if (this.options.useTransform) {
 			this.scroller.style[transform] = 'translate(' + x + 'px,' + y + 'px) scale(' + this.scale + ')' + translateZ;

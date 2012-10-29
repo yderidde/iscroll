@@ -1,5 +1,5 @@
 {
   "name": "iScroll",
   "version": "4.2.3",
-  "main": ["./src/iscroll.css"]
+  "main": ["./src/iscroll.js"]
 }
